@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Modules Demo</title>
+</head>
+<body>
+<h1>Calculator</h1>
+<label>
+    First Number
+    <input id="a">
+</label>
+<label>
+    Second Number
+    <input id="b">
+</label>
+<button id="add-numbers">Add Numbers</button>
+
+<h2 id="result1"></h2>
+<h2 id="result2"></h2>
+<h2 id="result3"></h2>
+<script type="module">
+    // named imports
+    import {add} from "./lib/add.js"
+
+    // you can also import the default export like so
+    import defaultExport from "./lib/add.js"
+
+    // you can import the module as a namespace
+    import * as calculator from "./lib/add.js"
+
+    // add the numbers
+    const a = document.getElementById('a')
+    const b = document.getElementById('b')
+
+    document.getElementById('add-numbers').addEventListener('click', (e) => {
+        document.getElementById('result1').innerText = 'Using named import: ' + add(a.value, b.value)
+        document.getElementById('result2').innerText = 'Using default import: ' + defaultExport(a.value, b.value)
+        document.getElementById('result3').innerText = 'Using namespace import: ' + calculator.add(a.value, b.value)
+    });
+
+</script>
+</body>
+</html>

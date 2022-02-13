@@ -1,0 +1,11 @@
+{
+  "name": "cjs-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+  },
+  "scripts": {
+    "two-plus-two": "node calculator.js 2 2",
+    "two-plus-two-cjs": "node calculator.js 2 2"
+  }
+}
